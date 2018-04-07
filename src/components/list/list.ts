@@ -21,7 +21,7 @@ export class ListComponent extends Vue {
 
   items: UserResponse[] = []
   protected axios
-  private url = 'https://jsonplaceholder.typicode.com/users'
+  private url = 'https://jsonplaceholder.typicode.com/albums'
 
   constructor () {
     super()

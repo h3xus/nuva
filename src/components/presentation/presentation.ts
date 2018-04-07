@@ -2,21 +2,23 @@ import { Component, Vue } from 'vue-property-decorator'
 import bContainer from 'bootstrap-vue/es/components/layout/container'
 import bCol from 'bootstrap-vue/es/components/layout/col'
 import bRow from 'bootstrap-vue/es/components/layout/row'
-
-import './home.scss'
+import { Logger } from '../../util/log'
 
 @Component({
-  template: require('./home.html'),
+  template: require('./about.html'),
   components: {
     'b-container': bContainer,
     'b-col': bCol,
-    'b-row': bRow,
+    'b-row': bRow
   }
 })
-export class HomeComponent extends Vue {
+export class AboutComponent extends Vue {
 
-  package: string = 'vue-webpack-typescript'
   repo: string = 'https://github.com/ducksoupdev/vue-webpack-typescript'
-  mode: string = process.env.ENV
+  protected logger: Logger
 
+  mounted () {
+    if (!this.logger) this.logger = new Logger()
+    this.$nextTick(() => this.logger.info('about is ready!'))
+  }
 }
