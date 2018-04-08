@@ -10,7 +10,7 @@ import './home.scss'
   components: {
     'b-container': bContainer,
     'b-col': bCol,
-    'b-row': bRow,
+    'b-row': bRow
   }
 })
 export class HomeComponent extends Vue {
